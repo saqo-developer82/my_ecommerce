@@ -63,7 +63,7 @@ class ProductResource extends Resource
                     ]),
 
                     Section::make('Associations')->schema([
-                        Select::make('category_id') // TODO: error when creating a new product. Check and fix
+                        Select::make('category_id')
                             ->required()
                             ->searchable()
                             ->preload()
@@ -77,7 +77,7 @@ class ProductResource extends Resource
                     ]),
 
                     Section::make('Status')->schema([
-                        Forms\Components\Toggle::make('is_stock')
+                        Forms\Components\Toggle::make('in_stock')
                             ->required()
                             ->default(true),
 
